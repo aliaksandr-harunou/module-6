@@ -6,7 +6,9 @@ const {
     until
 } = require("selenium-webdriver");
 let credentials = require('../../credentials');
-const {expect} = require('chai');
+const {
+    expect
+} = require('chai');
 require("chromedriver");
 
 describe("test run for heroes.epam.com", function () {
@@ -14,15 +16,17 @@ describe("test run for heroes.epam.com", function () {
     let driver;
     beforeEach(async function () {
         driver = await new Builder().forBrowser("chrome").build();
-        await driver.manage().setTimeouts( { implicit: 10000 } );
+        await driver.manage().setTimeouts({
+            implicit: 10000
+        });
         await driver.get("https://heroes.epam.com/");
         await driver.manage().window().maximize();
     });
-    afterEach(async function () {        
-        await driver.quit();        
+    afterEach(async function () {
+        await driver.quit();
     });
 
-    it("page should contain search field and header with text 'EIS Project badges'", async function () {    
+    it("page should contain search field and header with text 'EIS Project badges'", async function () {
         // default content
         await driver.wait(until.elementLocated(By.id("userNameInput")), 5000);
         await driver.findElement(By.id("userNameInput")).sendKeys(credentials.login);

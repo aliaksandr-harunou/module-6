@@ -1,5 +1,4 @@
 node_modules/
-chromedriver.exe
 mochawesome-report/
 Protractor/guitest-xmloutput.xml
 Protractor/ProtractorTestReport.html
