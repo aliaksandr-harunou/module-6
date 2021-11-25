@@ -5,7 +5,7 @@ exports.config = {
   // directConnect: true,
   specs: ['spec.js'],
   capabilities: {
-      'browserName': 'chrome'
+    'browserName': 'chrome'
   },
   framework: 'jasmine',
   jasmineNodeOpts: {
@@ -21,14 +21,14 @@ exports.config = {
       savePath: '.'
     }));
   },
-  onPrepare: function(){
+  onPrepare: function () {
     const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
     jasmine.getEnv().addReporter(new SpecReporter({
-          spec: {
-            displayStacktrace: true
-          }
-        }));
-    },
+      spec: {
+        displayStacktrace: true
+      }
+    }));
+  },
   onComplete: function () {
     let browserName, browserVersion;
     let capsPromise = browser.getCapabilities();
