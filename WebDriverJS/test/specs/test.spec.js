@@ -27,7 +27,6 @@ describe("test run for heroes.epam.com", function () {
     });
 
     it("page should contain search field and header with text 'EIS Project badges'", async function () {
-        // default content
         await driver.wait(until.elementLocated(By.id("userNameInput")), 5000);
         await driver.findElement(By.id("userNameInput")).sendKeys(credentials.login);
         await driver.findElement(By.id("passwordInput")).sendKeys(credentials.password);
@@ -40,7 +39,6 @@ describe("test run for heroes.epam.com", function () {
         await driver.findElement(By.xpath("(//button)[1]")).click();
         await driver.switchTo().defaultContent();
 
-        // default content
         await driver.wait(until.elementLocated(By.id('idSIButton9')), 30000);
         await driver.findElement(By.id("idSIButton9")).click();
         await driver.wait(until.elementLocated(By.id('heroesGiveBadge')), 30000);
