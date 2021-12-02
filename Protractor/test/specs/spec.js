@@ -1,4 +1,5 @@
-describe('tests for Angular Apple Support application', function () {
+const EC = browser.ExpectedConditions;
+describe('test for Angular application', function () {
     const EC = browser.ExpectedConditions;
     const invalidSerialNumber = 10000000;
     const inputField = "awInput0";
@@ -11,7 +12,6 @@ describe('tests for Angular Apple Support application', function () {
     const buttonsOnMainPages = "button-content hidden-whiledeck";
 
     beforeEach(function () {
-        
         browser.get('https://getsupport.apple.com/');
         browser.manage().window().maximize();
     });
@@ -42,12 +42,11 @@ describe('tests for Angular Apple Support application', function () {
     });
 });
 
-describe('tests for React application', function () {
-    const EC = browser.ExpectedConditions;
-    const emailAddressField = "id_email_hero_fuji"; 
-    const myEmail = "Aliaksandr_Harunou@epam.com";
-    const getStartedbutton = "//*[@id='appMountPoint']/div/div/div/div/div/div[2]/div[1]/div[2]/form/div/div/button";
-    const nextButton = "nf-btn nf-btn-primary nf-btn-solid nf-btn-oversize"; 
+describe('test for React application', function () {    
+    const emailAddressField = "id_email_hero_fuji";
+    const myEmail = "Aliaksandr_Harunou@epam.com";    
+    const getStartedbuttonCss = "button.btn.btn-red.nmhp-cta.nmhp-cta-extra-large.btn-none.btn-custom";
+    const nextButton = "nf-btn nf-btn-primary nf-btn-solid nf-btn-oversize";
     const passwordFieldId = "id_password";
 
     beforeEach(function () {
@@ -63,11 +62,11 @@ describe('tests for React application', function () {
     it('should display Password Field during membership creation', function () {
         browser.wait(EC.visibilityOf(element(by.id(emailAddressField))), 5000);
         element(by.id(emailAddressField)).sendKeys(myEmail);
-        element(by.xpath(getStartedbutton)).click();
+        element(by.css(getStartedbuttonCss)).click();
         browser.wait(EC.visibilityOf(element(by.className(nextButton))), 5000);
         element(by.className(nextButton)).click();
         browser.wait(EC.visibilityOf(element(by.id(passwordFieldId))), 5000);
-        let passwordField = element(by.id(passwordFieldId));
+        const passwordField = element(by.id(passwordFieldId));
         expect(passwordField.isDisplayed()).toEqual(true);
     });
 });

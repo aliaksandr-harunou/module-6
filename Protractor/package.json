@@ -6,7 +6,7 @@
   "scripts": {
     "prestart-webdriver": "webdriver-manager update",
     "start-webdriver": "webdriver-manager start",
-    "protractor": "protractor conf.js"
+    "test": "protractor ./test/config/conf.js"
   },
   "keywords": [
     "protractor"
