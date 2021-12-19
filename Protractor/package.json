@@ -1,0 +1,22 @@
+{
+  "name": "protractor-practice",
+  "version": "1.0.0",
+  "description": "protractor practice",
+  "main": "index.js",
+  "scripts": {
+    "prestart-webdriver": "webdriver-manager update",
+    "start-webdriver": "webdriver-manager start",
+    "test": "protractor ./test/config/conf.js"
+  },
+  "keywords": [
+    "protractor"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine-reporters": "^2.5.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "protractor": "^7.0.0",
+    "protractor-html-reporter-2": "^1.0.4"
+  }
+}
