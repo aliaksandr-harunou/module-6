@@ -8,7 +8,7 @@ describe('test for Angular application', function () {
     const buttonOK = "//*[(text() = 'OK')]";
     const iconIpad = "(//button[@class='button-content'])[3]";
     const iconBringIn = "//*[contains(@aria-describedby,'itemDesc1')]";
-    const someText = "#locatorHeader > h1";
+    const headerText = "#locatorHeader > h1";
     const buttonsOnMainPages = "button-content hidden-whiledeck";
 
     beforeEach(function () {
@@ -38,7 +38,7 @@ describe('test for Angular application', function () {
         browser.wait(EC.elementToBeClickable(element(by.xpath(iconBringIn))), 5000);
         element(by.xpath(iconBringIn)).click();
         browser.wait(EC.visibilityOf(element(by.css(someText))), 5000);
-        expect(element(by.css(someText)).getText()).toEqual("Find Locations");
+        expect(element(by.css(headerText)).getText()).toEqual("Find Locations");
     });
 });
 
